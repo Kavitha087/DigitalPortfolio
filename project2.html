@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Details</h2>
+    <form id="studentForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age"><br><br>
+        
+        <label for="course">Course:</label><br>
+        <input type="text" id="course" name="course"><br><br>
+        
+        <button type="button" onclick="submitDetails()">Submit</button>
+    </form>
+
+    <div id="output" style="margin-top: 20px;"></div>
+</div>
+
+<script>
+    function submitDetails() {
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+        const course = document.getElementById('course').value;
+
+        const output = document.getElementById('output');
+        output.innerHTML = `
+            <strong>Submitted Details:</strong><br>
+            Name: ${name}<br>
+            Age: ${age}<br>
+            Course: ${course}
+        `;
+    }
+</script>
+
+</body>
+</html>
